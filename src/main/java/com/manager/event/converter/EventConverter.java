@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class EventConverter {
 
-    public EventEntity RequestToEntity(EventRequest eventRequest) {
+    public EventEntity requestToEntity(EventRequest eventRequest) {
         EventEntity eventEntity = new EventEntity();
         eventEntity.setName(eventRequest.getName());
         eventEntity.setDescription(eventRequest.getDescription());
@@ -17,7 +17,7 @@ public class EventConverter {
         return eventEntity;
     }
 
-    public EventResponse EntityToResponse(EventEntity eventEntity) {
+    public EventResponse entityToResponse(EventEntity eventEntity) {
         EventResponse eventResponse = new EventResponse();
         eventResponse.setName(eventEntity.getName());
         eventResponse.setDescription(eventEntity.getDescription());
