@@ -20,14 +20,14 @@ public class EventController {
     public EventResponse getEvent(@PathVariable Long id) {
 
         EventEntity eventEntity = service.getById(id);
-        return converter.EntityToResponse(eventEntity);
+        return converter.entityToResponse(eventEntity);
     }
 
     @PostMapping
     public EventResponse save(@RequestBody EventRequest request) {
 
-        EventEntity event = converter.RequestToEntity(request);
+        EventEntity event = converter.requestToEntity(request);
         EventEntity savedEvent = service.save(event);
-        return converter.EntityToResponse(savedEvent);
+        return converter.entityToResponse(savedEvent);
     }
 }
